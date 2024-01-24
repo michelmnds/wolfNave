@@ -12,10 +12,16 @@ export const PTModal = () => {
   const { setPtModal } = useContext(ModalContext);
   const { id, name, location, img, specialities } = singlePt;
 
+  const handleClick = () => {
+    setPtModal(false);
+  };
+
   return (
     <div className="ptModalContainer">
       <div className="ptModal">
-        <span className="ptModalX">X</span>
+        <span className="ptModalX" onClick={handleClick}>
+          X
+        </span>
 
         <div
           className="ptModalImg"
