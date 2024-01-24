@@ -41,6 +41,7 @@ export const LandingPage = () => {
               img={pt.image}
               name={pt.name}
               specialities={pt.speciality}
+              location={pt.location}
             ></PTCard>
           ))}
         </div>

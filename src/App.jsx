@@ -8,11 +8,11 @@ import { ModalContext } from "./providers/ModalContext";
 
 function App() {
   const [menu, setMenu] = useState();
-  const { modal } = useContext(ModalContext);
+  const { ptModal } = useContext(ModalContext);
 
   return (
     <>
-      {modal && <PTModal />}
+      {ptModal && <PTModal />}
       <Header menu={menu} />
       <Routes>
         <Route path="/" element={<LandingPage />} />

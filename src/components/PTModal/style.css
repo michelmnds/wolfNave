@@ -2,7 +2,7 @@
     width: 100%;
     height: 200vh;
 
-    background-color: rgba(0, 0, 0, 0.397);
+    background-color: rgba(0, 0, 0, 0.678);
 
     position: absolute;
 
@@ -13,8 +13,80 @@
     z-index: 1;
 }
 .ptModal{
-    width: 280px;
-    height: 280px;
+    width: 85%;
+    height: 450px;
 
-    background-color: var(--primary-color);
+    background-color: var(--primary-grey);
+
+    position: relative;
+}
+.ptModalImg{
+    height: 200px;
+
+    background-position: top;    
+    background-size: cover;
+
+    border-bottom: 4px solid var(--primary-color);
+}
+.ptModalX{
+    position: absolute;
+
+    font-weight: bolder;
+    font-size: 20px;
+
+    color: var(--primary-yellow);
+
+    right: 10px;
+    top: 10px;
+}
+.ptModalInfos{
+    padding: 20px;
+    
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.ptModalName{
+    font-size: 20px;
+    font-weight: bolder;
+
+    color: var(--primary-color);
+
+    margin-bottom: 20px
+}
+.ptModalTopContainer{
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 10px;
+}
+.ptIcon{
+    width: auto;
+    height: 18px;
+}
+.ptModalBtn{
+    text-decoration: none;
+    font-size: 14px;
+
+    width: 208px;
+
+    padding: 10px;
+
+    border: 2px solid var(--primary-color);
+
+    color: var(--secondary-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.specialityContainer{
+    margin-bottom: 30px
 }

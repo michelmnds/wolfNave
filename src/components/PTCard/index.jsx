@@ -3,12 +3,15 @@
 import { useContext } from "react";
 import "./style.css";
 import { ModalContext } from "../../providers/ModalContext";
+import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
 
-export const PTCard = ({ id, img, name, specialities }) => {
-  const { modal, setModal } = useContext(ModalContext);
+export const PTCard = ({ id, img, name, specialities, location }) => {
+  const { ptModal, setPtModal } = useContext(ModalContext);
+  const { setSinglePt, singlePt } = useContext(PersonalTrainerContext);
 
   const handleClick = () => {
-    setModal(true);
+    setPtModal(true);
+    setSinglePt({ id, img, name, specialities, location });
   };
 
   return (
@@ -25,15 +28,3 @@ export const PTCard = ({ id, img, name, specialities }) => {
     </div>
   );
 };
-
-{
-  /* <section className="specialityContainer">
-  {specialities.map((speciality) => {
-    return (
-      <p className="specialP" key={id}>
-        ✓ {speciality}
-      </p>
-    );
-  })}
-</section> */
-}

@@ -7,6 +7,7 @@ export const PersonalTrainerContext = createContext();
 
 export const PersonalTrainerContextProvider = ({ children }) => {
   const [ptList, setPtLits] = useState([]);
+  const [singlePt, setSinglePt] = useState({});
 
   const getAllPts = async () => {
     try {
@@ -22,7 +23,9 @@ export const PersonalTrainerContextProvider = ({ children }) => {
   };
 
   return (
-    <PersonalTrainerContext.Provider value={{ getAllPts, ptList, setPtLits }}>
+    <PersonalTrainerContext.Provider
+      value={{ getAllPts, ptList, singlePt, setSinglePt, setPtLits }}
+    >
       {children}
     </PersonalTrainerContext.Provider>
   );
