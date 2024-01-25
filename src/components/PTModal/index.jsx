@@ -16,8 +16,16 @@ export const PTModal = () => {
     setPtModal(false);
   };
 
+  const handleOutsideClick = () => {
+    window.addEventListener("click", (e) => {
+      if (e.target.className == "ptModalContainer") {
+        setPtModal(false);
+      }
+    });
+  };
+
   return (
-    <div className="ptModalContainer">
+    <div className="ptModalContainer" onClick={handleOutsideClick}>
       <div className="ptModal">
         <span className="ptModalX" onClick={handleClick}>
           X
