@@ -32,8 +32,16 @@ export const PTModal = () => {
           <div className="ptModalTopContainer">
             <span className="ptModalName">{name} - </span>
 
-            <img className="ptIcon" src={instagram} alt="instagram icon" />
-            <img className="ptIcon" src={facebook} alt="facebook icon" />
+            <a
+              className="ptIcon"
+              style={{ backgroundImage: `url(${instagram})` }}
+              alt="instagram icon"
+            />
+            <a
+              className="ptIcon"
+              style={{ backgroundImage: `url(${facebook})` }}
+              alt="facebook icon"
+            />
           </div>
 
           <section className="specialityContainer">
