@@ -132,6 +132,10 @@
     justify-content: center;
 
     gap: 10px;
+
+    width: 100%;
+
+    background-color: rgba(94, 94, 94, 0.466);
 }
 .pagination{
     font-size: 40px;
@@ -140,7 +144,7 @@
     transition: 0.3s;
 }
 .gold{
-    color: var(--primary-color);
+    color: var(--primary-yellow);
 
     transform: scale(0.9);
     transition: 0.3s;
