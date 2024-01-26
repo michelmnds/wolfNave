@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { LandingPage } from "./pages/LandingPage";
 import { PTModal } from "./components/PTModal";
 import { ModalContext } from "./providers/ModalContext";
+import { Footer } from "./components/Footer";
 
 function App() {
   const [menu, setMenu] = useState();
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

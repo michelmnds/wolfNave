@@ -1,0 +1,43 @@
+.footerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    padding: 20px;
+
+    border-top: 2px solid var(--secondary-color);
+}
+.footerLogo{
+    margin-right: -20px;
+    width: 30px;
+}
+.footerIcon{
+    display: block;
+    
+    width: 20px;
+    height: 20px;
+
+    background-size: cover;
+    background-position: center;
+}
+.footerLine{
+    margin: 0;
+    transform: rotate(90deg);
+
+    width: 50px;
+    
+
+    border: 2px solid  var(--primary-color);
+}
+.footerIconContainer{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-left: -20px;
+}

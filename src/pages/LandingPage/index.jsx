@@ -19,10 +19,10 @@ export const LandingPage = () => {
   useEffect(() => {
     getAllPts();
     setCurrentIndex(0);
+    console.log(ptList);
   }, []);
 
   useEffect(() => {
-    console.log(currentIndex);
     if (currentIndex < 0) {
       setCurrentIndex(ptList.length - 1);
     } else if (currentIndex > ptList.length - 1) {
@@ -30,58 +30,70 @@ export const LandingPage = () => {
     }
   }, [currentIndex]);
 
-  return (
-    <div className="landingPageContainer" id="landingPageContainer">
-      <div className="landingImage">
-        <img className="landingLogo" src={logo} alt="logo" />
-      </div>
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % ptList.length);
+    }, 3000);
 
-      <main className="landingMain">
-        <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [ptList]);
 
-        <Link className="mainBtn">PESQUISAR</Link>
-        <span className="mainSpan">OU</span>
-        <Link className="mainBtn">CONHEÇA A EQUIPA</Link>
-      </main>
+  if (ptList.length != 0) {
+    return (
+      <div className="landingPageContainer" id="landingPageContainer">
+        <div className="landingImage">
+          <img className="landingLogo" src={logo} alt="logo" />
+        </div>
 
-      <div className="ptDisplayContainer">
-        <div
-          key={ptList[currentIndex]}
-          className="ptDisplay"
-          style={{ backgroundImage: `url(${ptList[currentIndex]?.image})` }}
-        >
-          <section className="paginationContainer">
-            <span
-              className="lt"
-              onClick={() => setCurrentIndex(currentIndex - 1)}
-            >
-              &lt;
-            </span>
-            <span
-              className="gt"
-              onClick={() => setCurrentIndex(currentIndex + 1)}
-            >
-              &gt;
-            </span>
+        <main className="landingMain">
+          <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
 
-            {ptList.map((pt, index) => {
-              return (
-                <span
-                  className={`pagination ${
-                    currentIndex === index ? "gold" : ""
-                  }`}
-                  key={pt.id}
-                  onClick={() => handlePaginationClick(index)}
-                >
-                  -
-                </span>
-              );
-            })}
-          </section>
+          <Link className="mainBtn">PESQUISAR</Link>
+          <span className="mainSpan">OU</span>
+          <Link className="mainBtn">CONHEÇA A EQUIPA</Link>
+        </main>
+
+        <div className="ptDisplayContainer">
+          <div
+            key={ptList[currentIndex]}
+            className="ptDisplay"
+            style={{ backgroundImage: `url(${ptList[currentIndex]?.image})` }}
+          >
+            <section className="paginationContainer">
+              <span
+                className="lt"
+                onClick={() => setCurrentIndex(currentIndex - 1)}
+              >
+                &lt;
+              </span>
+              <span
+                className="gt"
+                onClick={() => setCurrentIndex(currentIndex + 1)}
+              >
+                &gt;
+              </span>
+
+              {ptList.map((pt, index) => {
+                return (
+                  <span
+                    className={`pagination ${
+                      currentIndex === index ? "gold" : ""
+                    }`}
+                    key={index + "a"}
+                    onClick={() => handlePaginationClick(index)}
+                  >
+                    -
+                  </span>
+                );
+              })}
+            </section>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 {

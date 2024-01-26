@@ -9,7 +9,7 @@
 
     background-color: var(--secondary-grey);
 
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 .headerLogo{
     width: 30px;
