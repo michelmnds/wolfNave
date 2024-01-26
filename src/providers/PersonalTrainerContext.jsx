@@ -1,9 +1,10 @@
-/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import axios from "axios";
 import { createContext, useState } from "react";
 
 export const PersonalTrainerContext = createContext();
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const PersonalTrainerContextProvider = ({ children }) => {
   const [ptList, setPtLits] = useState([]);
@@ -11,9 +12,7 @@ export const PersonalTrainerContextProvider = ({ children }) => {
 
   const getAllPts = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:5005/personal-trainers`
-      );
+      const response = await axios.get(`${API_URL}/personal-trainers`);
       if (response.status === 200) {
         setPtLits(response.data);
       }

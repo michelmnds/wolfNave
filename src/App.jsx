@@ -6,6 +6,7 @@ import { LandingPage } from "./pages/LandingPage";
 import { PTModal } from "./components/PTModal";
 import { ModalContext } from "./providers/ModalContext";
 import { Footer } from "./components/Footer";
+import { SearchPage } from "./pages/SearchPage/inex";
 
 function App() {
   const [menu, setMenu] = useState();
@@ -17,6 +18,8 @@ function App() {
       <Header menu={menu} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/busca" element={<SearchPage />} />
+        {/* <Route path="/equipa" element={<TeamPage />} /> */}
       </Routes>
       <Footer />
     </>

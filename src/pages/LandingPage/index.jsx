@@ -50,9 +50,13 @@ export const LandingPage = () => {
         <main className="landingMain">
           <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
 
-          <Link className="mainBtn">PESQUISAR</Link>
+          <Link to="/busca" className="mainBtn">
+            PESQUISAR
+          </Link>
           <span className="mainSpan">OU</span>
-          <Link className="mainBtn">CONHEÇA A EQUIPA</Link>
+          <Link to="/equipa" className="mainBtn">
+            CONHEÇA A EQUIPA
+          </Link>
         </main>
 
         <div className="ptDisplayContainer">
