@@ -5,16 +5,16 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: 20px;
+    padding: 10px 20px;
 
     background-color: var(--secondary-grey);
 
     border-bottom: 1px solid var(--secondary-color);
 }
-.headerContainer > span {
-    color: var(--primary-color);
+.headerLogo{
+    width: 30px;
 }
 .icon{
     width: auto;
-    height: 15px;
+    height: 18px;
 }

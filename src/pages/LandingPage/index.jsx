@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
 import { PTCard } from "../../components/PTCard";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo.png";
 
 export const LandingPage = () => {
   const { getAllPts, ptList } = useContext(PersonalTrainerContext);
@@ -32,7 +33,7 @@ export const LandingPage = () => {
   return (
     <div className="landingPageContainer" id="landingPageContainer">
       <div className="landingImage">
-        <h1>LOGO</h1>
+        <img className="landingLogo" src={logo} alt="logo" />
       </div>
 
       <main className="landingMain">

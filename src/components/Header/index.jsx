@@ -2,11 +2,12 @@
 import "./style.css";
 import x from "../../assets/icons/x.png";
 import menuIcon from "../../assets/icons/menu.png";
+import lobo from "../../assets/images/lobo.png";
 
 export const Header = ({ menu }) => {
   return (
     <header className="headerContainer">
-      <span>LOGO</span>
+      <img className="headerLogo" src={lobo} alt="logo" />
 
       <div className="iconContainer">
         {menu ? (

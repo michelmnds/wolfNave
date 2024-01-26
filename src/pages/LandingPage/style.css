@@ -6,7 +6,7 @@
 }
 .landingImage{
     background-image: url('../../assets/images/mainBackground.png');
-    background-size: contain;
+    background-size: cover;
 
     height: 360px;
 
@@ -14,13 +14,11 @@
     align-items: center;
     justify-content: center;
 }
-.landingImage > h1 {
-    color: var(--primary-color);
+.landingLogo{
+    width: 250px;
 
-    font-size: 60px;
-    font-weight: bolder;
+    margin: 0;
 }
-
 .landingMain{
     display: flex;
     flex-direction: column;
