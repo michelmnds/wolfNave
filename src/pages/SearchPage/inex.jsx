@@ -6,7 +6,7 @@ import "./style.css";
 import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
 import { PTCard } from "../../components/PTCard";
 
-export const SearchPage = ({ menu }) => {
+export const SearchPage = ({ menu, setMenu }) => {
   const [city, setCity] = useState("");
   const [speciality, setSpeciality] = useState("");
   const [gender, setGender] = useState("");
@@ -28,6 +28,10 @@ export const SearchPage = ({ menu }) => {
     getAvaliableCities();
     getAllSpecialities();
     getAllPts();
+
+    setTimeout(() => {
+      setMenu(false);
+    }, 100);
   }, []);
 
   const findPt = () => {

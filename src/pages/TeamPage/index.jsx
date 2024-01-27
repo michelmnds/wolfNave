@@ -8,18 +8,22 @@ import "./style.css";
 import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
 import { PTCard } from "../../components/PTCard";
 
-export const TeamPage = ({ menu }) => {
+export const TeamPage = ({ menu, setMenu }) => {
   const { ptList, getAllPts } = useContext(PersonalTrainerContext);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getAllPts();
     setIsLoading(false);
+
+    setTimeout(() => {
+      setMenu(false);
+    }, 100);
   }, []);
 
   if (!isLoading) {
     return (
-      <div className="teamPageContainer">
+      <div className={`teamPageContainer ${menu ? "move" : ""}`}>
         <h2 className="teamPageTitle">Conheça a Equipa!</h2>
 
         <hr className="teamPageLine" />

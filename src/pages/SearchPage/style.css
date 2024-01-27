@@ -4,6 +4,7 @@
     transition: 0.1s ease-in;
 }
 .searchMain{
+    display: flex;
     padding: 20px;
 }
 .searchForm{
@@ -22,6 +23,8 @@
 .searchTitle{
     font-size: 38px;
     font-weight: bolder;
+
+    max-width: 320px;
 
     text-align: start;
 
@@ -55,7 +58,7 @@
 
     width: 100%;
 
-    min-height: 400px;
+    min-height: 200px;
 ;
 
 }
@@ -100,4 +103,15 @@ select{
     transform: translateY(98px);
 
     transition: 0.3s ease-out;
+}
+
+@media(width >= 375px) {
+    .searchTitle{
+        text-align: center;
+    }
+}
+@media(width >= 768px) {
+    .searchTitle{
+        text-align: center;
+    }
 }

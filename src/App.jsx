@@ -20,9 +20,18 @@ function App() {
       <Header menu={menu} setMenu={setMenu} />
       <NavBar menu={menu} setMenu={setMenu} />
       <Routes>
-        <Route path="/" element={<LandingPage menu={menu} />} />
-        <Route path="/busca" element={<SearchPage menu={menu} />} />
-        <Route path="/equipa" element={<TeamPage menu={menu} />} />
+        <Route
+          path="/"
+          element={<LandingPage menu={menu} setMenu={setMenu} />}
+        />
+        <Route
+          path="/busca"
+          element={<SearchPage menu={menu} setMenu={setMenu} />}
+        />
+        <Route
+          path="/equipa"
+          element={<TeamPage menu={menu} setMenu={setMenu} />}
+        />
       </Routes>
       <Footer />
     </>

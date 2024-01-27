@@ -37,3 +37,18 @@
 
     color: var(--primary-color);
 }
+.move{
+    transform: translateY(98px);
+
+    transition: 0.3s ease-out;
+}
+
+@media(width >= 768px) {
+    .teamPageMain{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .teamPageLine{
+        width: 320px;
+    }
+}

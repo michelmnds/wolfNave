@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
 
-    z-index: 1;
+    z-index: 3;
   }
 .ptModal{
     width: 85%;
@@ -24,7 +24,7 @@
 
     top: 0;
 
-    z-index: 2;
+    z-index: 3;
 
 }
 .ptModalImg{

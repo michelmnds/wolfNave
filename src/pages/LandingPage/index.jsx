@@ -20,6 +20,10 @@ export const LandingPage = ({ menu, setMenu }) => {
     getAllPts();
     setCurrentIndex(0);
     setIsLoading(false);
+
+    setTimeout(() => {
+      setMenu(false);
+    }, 100);
   }, []);
 
   useEffect(() => {
@@ -43,58 +47,62 @@ export const LandingPage = ({ menu, setMenu }) => {
   if (!isLoading) {
     return (
       <div className="landingPageContainer" id="landingPageContainer">
-        <div className={`landingImage ${menu ? "move" : ""}`}>
-          <img className="landingLogo" src={logo} alt="logo" />
-        </div>
-
-        <main className={`landingMain ${menu ? "move" : ""}`}>
-          <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
-
-          <Link to="/busca" className="mainBtn">
-            PESQUISAR
-          </Link>
-          <span className="mainSpan">OU</span>
-          <Link to="/equipa" className="mainBtn">
-            CONHEÇA A EQUIPA
-          </Link>
-        </main>
-
-        <div className={`ptDisplayContainer ${menu ? "move" : ""}`}>
-          <div
-            key={ptList[currentIndex]}
-            className="ptDisplay"
-            style={{ backgroundImage: `url(${ptList[currentIndex]?.image})` }}
-          >
-            <section className="paginationContainer">
-              <span
-                className="lt"
-                onClick={() => setCurrentIndex(currentIndex - 1)}
-              >
-                &lt;
-              </span>
-              <span
-                className="gt"
-                onClick={() => setCurrentIndex(currentIndex + 1)}
-              >
-                &gt;
-              </span>
-
-              {ptList.map((pt, index) => {
-                return (
-                  <span
-                    className={`pagination ${
-                      currentIndex === index ? "gold" : ""
-                    }`}
-                    key={index + "a"}
-                    onClick={() => handlePaginationClick(index)}
-                  >
-                    -
-                  </span>
-                );
-              })}
-            </section>
+        <section className="topSection">
+          <div className={`landingImage ${menu ? "move" : ""}`}>
+            <img className="landingLogo" src={logo} alt="logo" />
           </div>
-        </div>
+        </section>
+
+        <section className="bottomSection">
+          <main className={`landingMain ${menu ? "move" : ""}`}>
+            <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
+
+            <Link to="/busca" className="mainBtn">
+              PESQUISAR
+            </Link>
+            <span className="mainSpan">OU</span>
+            <Link to="/equipa" className="mainBtn">
+              CONHEÇA A EQUIPA
+            </Link>
+          </main>
+
+          <div className={`ptDisplayContainer ${menu ? "move" : ""}`}>
+            <div
+              key={ptList[currentIndex]}
+              className="ptDisplay"
+              style={{ backgroundImage: `url(${ptList[currentIndex]?.image})` }}
+            >
+              <section className="paginationContainer">
+                <span
+                  className="lt"
+                  onClick={() => setCurrentIndex(currentIndex - 1)}
+                >
+                  &lt;
+                </span>
+                <span
+                  className="gt"
+                  onClick={() => setCurrentIndex(currentIndex + 1)}
+                >
+                  &gt;
+                </span>
+
+                {ptList.map((pt, index) => {
+                  return (
+                    <span
+                      className={`pagination ${
+                        currentIndex === index ? "gold" : ""
+                      }`}
+                      key={index + "a"}
+                      onClick={() => handlePaginationClick(index)}
+                    >
+                      -
+                    </span>
+                  );
+                })}
+              </section>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

@@ -55,3 +55,9 @@
 
     color: var(--secondary-color);
 }
+
+@media(width >= 768px) {
+    .ptCard{
+        max-width: 349px;
+    }
+}
