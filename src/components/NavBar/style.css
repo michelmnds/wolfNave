@@ -33,3 +33,11 @@
 
     transition: 0.3s ease-out;
 }
+
+@media(width >= 1024px){
+    .moveNav{
+        top: 79px;
+    
+        transition: 0.3s ease-out;
+    }
+}

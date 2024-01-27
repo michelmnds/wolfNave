@@ -52,3 +52,10 @@
         width: 320px;
     }
 }
+
+
+@media(width >= 1024px) {
+    .teamPageContainer{
+        padding: 20px 130px
+    }
+}

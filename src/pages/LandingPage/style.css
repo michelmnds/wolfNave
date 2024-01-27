@@ -200,3 +200,8 @@
         top: 225px;
     }
 }
+@media(width >= 1024px){
+    .mainTitle{
+        width: 300px;
+    }
+}

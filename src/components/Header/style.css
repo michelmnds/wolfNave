@@ -25,3 +25,12 @@
     width: auto;
     height: 18px;
 }
+
+@media(width >= 1024px){
+    .headerContainer{
+        padding: 10px 130px;
+    }
+    .headerLogo{
+        width: 40px;
+    }
+}
