@@ -15,6 +15,8 @@ export const SearchPage = ({ menu, setMenu }) => {
   const [result, setResult] = useState([]);
   const [none, setNone] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const {
     ptList,
     getAllPts,
@@ -28,6 +30,7 @@ export const SearchPage = ({ menu, setMenu }) => {
     getAvaliableCities();
     getAllSpecialities();
     getAllPts();
+    setIsLoading(false);
 
     setTimeout(() => {
       setMenu(false);
@@ -68,7 +71,7 @@ export const SearchPage = ({ menu, setMenu }) => {
     }
   };
 
-  if (cityList.length !== 0) {
+  if (!isLoading) {
     return (
       <div className={`searchPageContainer ${menu ? "move" : ""}`}>
         <form className="searchForm" onSubmit={handleSubmit}>

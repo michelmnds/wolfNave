@@ -22,6 +22,7 @@
     padding: 20px;
 
     background-image: url('../../assets/images/searchBackground.png');
+    background-size: cover;
 }
 .searchTitle{
     font-size: 38px;
