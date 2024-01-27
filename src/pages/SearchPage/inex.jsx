@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
 import { useContext, useEffect, useState } from "react";
@@ -5,7 +6,7 @@ import "./style.css";
 import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
 import { PTCard } from "../../components/PTCard";
 
-export const SearchPage = () => {
+export const SearchPage = ({ menu }) => {
   const [city, setCity] = useState("");
   const [speciality, setSpeciality] = useState("");
   const [gender, setGender] = useState("");
@@ -65,9 +66,9 @@ export const SearchPage = () => {
 
   if (cityList.length !== 0) {
     return (
-      <div className="searchPageContainer">
+      <div className={`searchPageContainer ${menu ? "move" : ""}`}>
         <form className="searchForm" onSubmit={handleSubmit}>
-          <h1 className="searchTitle">Vamos encontar o PT perfeito para si</h1>
+          <h1 className="searchTitle">Vamos encontar o PT ideal para si</h1>
 
           <label className="label" htmlFor="cidade">
             <span>Cidade</span>

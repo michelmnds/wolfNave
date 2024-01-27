@@ -13,6 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+
+    transition: 0.1s ease-in;
 }
 .landingLogo{
     width: 250px;
@@ -32,6 +35,9 @@
     justify-content: center;
 
     gap: 10px;
+
+    transition: 0.1s ease-in;
+
 }
 .mainTitle{
     font-size: 32px;
@@ -102,6 +108,9 @@
 .ptDisplayContainer{
     height: 350px;
     position: relative;
+
+    transition: 0.1s ease-in;
+
 }
 .ptDisplay{
     height: 100%;
@@ -160,4 +169,9 @@
 .lt{
     top: 175px;
     left: 10px;
+}
+.move{
+    transform: translateY(98px);
+
+    transition: 0.3s ease-out;
 }

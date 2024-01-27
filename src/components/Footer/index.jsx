@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import "./style.css";
 import lobo from "../../assets/images/lobo.png";
 
 export const Footer = () => {
   return (
-    <div className="footerContainer">
+    <div className={`footerContainer`}>
       <img src={lobo} alt="footer Logo" className="footerLogo" />
 
       <hr className="footerLine" />

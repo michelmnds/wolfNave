@@ -10,6 +10,13 @@
     background-color: var(--secondary-grey);
 
     border-bottom: 2px solid var(--secondary-color);
+
+    z-index: 2;
+
+    position: relative;
+
+    right: 0;
+    left: 0;
 }
 .headerLogo{
     width: 30px;

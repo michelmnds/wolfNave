@@ -1,0 +1,35 @@
+.navBarContainer{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 10px;
+
+    background-color: var(--secondary-grey);
+
+    position: absolute;
+
+    right: 0;
+    left: 0;
+    top: -30px;
+
+    z-index: 1;
+
+    transition: 0.1s ease-in;
+
+}
+.navLink{
+    text-decoration: none;
+    font-weight: bolder;
+
+    color: var(--primary-color);
+}
+.moveNav{
+    top: 69px;
+
+    transition: 0.3s ease-out;
+}

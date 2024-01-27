@@ -1,5 +1,7 @@
 .searchPageContainer{
     min-height: 100vh;
+
+    transition: 0.1s ease-in;
 }
 .searchMain{
     padding: 20px;
@@ -93,4 +95,9 @@ select{
     color: var(--primary-color);
     
     cursor: pointer;
+}
+.move{
+    transform: translateY(98px);
+
+    transition: 0.3s ease-out;
 }

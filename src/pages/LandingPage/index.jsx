@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./style.css";
@@ -6,9 +7,10 @@ import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
-export const LandingPage = () => {
+export const LandingPage = ({ menu, setMenu }) => {
   const { getAllPts, ptList } = useContext(PersonalTrainerContext);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handlePaginationClick = (index) => {
     setCurrentIndex(index);
@@ -17,7 +19,7 @@ export const LandingPage = () => {
   useEffect(() => {
     getAllPts();
     setCurrentIndex(0);
-    console.log(ptList);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -38,14 +40,14 @@ export const LandingPage = () => {
     };
   }, [ptList]);
 
-  if (ptList.length != 0) {
+  if (!isLoading) {
     return (
       <div className="landingPageContainer" id="landingPageContainer">
-        <div className="landingImage">
+        <div className={`landingImage ${menu ? "move" : ""}`}>
           <img className="landingLogo" src={logo} alt="logo" />
         </div>
 
-        <main className="landingMain">
+        <main className={`landingMain ${menu ? "move" : ""}`}>
           <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
 
           <Link to="/busca" className="mainBtn">
@@ -57,7 +59,7 @@ export const LandingPage = () => {
           </Link>
         </main>
 
-        <div className="ptDisplayContainer">
+        <div className={`ptDisplayContainer ${menu ? "move" : ""}`}>
           <div
             key={ptList[currentIndex]}
             className="ptDisplay"
