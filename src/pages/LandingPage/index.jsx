@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./style.css";
-import search from "../../assets/icons/search.png";
 import { useContext, useEffect, useState } from "react";
 import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
-import { PTCard } from "../../components/PTCard";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
@@ -99,28 +97,3 @@ export const LandingPage = () => {
     );
   }
 };
-
-{
-  /*<section className="inputContainer">
-  <input
-    placeholder="Digita a sua cidade"
-    className="mainInput"
-    type="text"
-  />
-  <img className="searchIcon" src={search} alt="search icon" />
-</section>
-<hr className="mainLine" />
-
-<div className="ptContainer">
-  {ptList.map((pt) => (
-    <PTCard
-      key={pt._id}
-      id={pt._id}
-      img={pt.image}
-      name={pt.name}
-      specialities={pt.speciality}
-      location={pt.location}
-    ></PTCard>
-  ))}
-</div> */
-}

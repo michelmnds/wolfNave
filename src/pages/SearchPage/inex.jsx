@@ -3,13 +3,16 @@
 import { useContext, useEffect, useState } from "react";
 import "./style.css";
 import { PersonalTrainerContext } from "../../providers/PersonalTrainerContext";
+import { PTCard } from "../../components/PTCard";
 
 export const SearchPage = () => {
   const [city, setCity] = useState("");
   const [speciality, setSpeciality] = useState("");
   const [gender, setGender] = useState("");
-
   const finalObj = { city, speciality, gender };
+
+  const [result, setResult] = useState([]);
+  const [none, setNone] = useState(false);
 
   const {
     ptList,
@@ -24,39 +27,57 @@ export const SearchPage = () => {
     getAvaliableCities();
     getAllSpecialities();
     getAllPts();
-    console.log(cityList);
   }, []);
 
   const findPt = () => {
-    const fetchedPtList = ptList.filter(
-      (pt) =>
-        pt.location === finalObj.city &&
-        pt.gender === finalObj.gender &&
-        pt.speciality.includes(finalObj.speciality)
-    );
-    console.log(fetchedPtList);
+    const fetchedPtList = ptList.filter((pt) => {
+      if (Object.keys(finalObj).length > 0) {
+        if (finalObj.city != "" && pt.location !== finalObj.city) {
+          return false;
+        }
+
+        if (finalObj.gender != "" && pt.gender !== finalObj.gender) {
+          return false;
+        }
+
+        if (
+          finalObj.speciality != "" &&
+          !pt.speciality.includes(finalObj.speciality)
+        ) {
+          return false;
+        }
+
+        return true;
+      }
+    });
+    setResult(fetchedPtList);
+    setNone(false);
     return fetchedPtList;
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     findPt();
-    console.log(finalObj);
+    if (!result.length) {
+      setNone(true);
+    }
   };
 
   if (cityList.length !== 0) {
     return (
       <div className="searchPageContainer">
         <form className="searchForm" onSubmit={handleSubmit}>
-          <label htmlFor="cidade">
-            Cidade:
+          <h1 className="searchTitle">Vamos encontar o PT perfeito para si</h1>
+
+          <label className="label" htmlFor="cidade">
+            <span>Cidade</span>
             <select
               id="cidade"
               type="text"
               value={city}
               onChange={(event) => setCity(event.target.value)}
             >
-              <option value="null">Selecione uma cidade</option>
+              <option value="">Selecione uma cidade</option>
               {cityList.map((city, index) => {
                 return (
                   <option key={index} value={city.name}>
@@ -67,15 +88,16 @@ export const SearchPage = () => {
             </select>
           </label>
 
-          <label htmlFor="especialidade">
-            Especialidade:
+          <label className="label" htmlFor="especialidade">
+            <span>Especialidade</span>
+
             <select
               id="especialidade"
               type="text"
               value={speciality}
               onChange={(event) => setSpeciality(event.target.value)}
             >
-              <option value="null">Selecione uma especialidade</option>
+              <option value="">Selecione uma especialidade</option>
               {specialityList.map((speciality, index) => {
                 return (
                   <option key={index} value={speciality.name}>
@@ -86,15 +108,16 @@ export const SearchPage = () => {
             </select>
           </label>
 
-          <label htmlFor="genero">
-            Gênero:
+          <label className="label" htmlFor="genero">
+            <span>Gênero</span>
+
             <select
               id="genero"
               type="text"
               value={gender}
               onChange={(event) => setGender(event.target.value)}
             >
-              <option value="null">Selecione o gênero</option>
+              <option value="">Selecione o gênero</option>
               <option value="Female">Feminino</option>
               <option value="Male">Masculino</option>
             </select>
@@ -102,6 +125,27 @@ export const SearchPage = () => {
 
           <button className="formBtn">BUSCAR</button>
         </form>
+
+        <main className="searchMain">
+          <div className="ptContainer">
+            {result.length != 0 ? (
+              result.map((pt) => (
+                <PTCard
+                  key={pt._id}
+                  id={pt._id}
+                  img={pt.image}
+                  name={pt.name}
+                  specialities={pt.speciality}
+                  location={pt.location}
+                ></PTCard>
+              ))
+            ) : none ? (
+              <h2 className="ptTitle">Não encontramos nenhum PT</h2>
+            ) : (
+              <span className="ptTitle">Preencha os campos a cima</span>
+            )}
+          </div>
+        </main>
       </div>
     );
   }

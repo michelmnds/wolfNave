@@ -53,9 +53,9 @@ export const PTModal = () => {
           </div>
 
           <section className="specialityContainer">
-            {specialities.map((speciality) => {
+            {specialities.map((speciality, index) => {
               return (
-                <p className="specialP" key={id}>
+                <p className="specialP" key={index}>
                   ✓ {speciality}
                 </p>
               );
