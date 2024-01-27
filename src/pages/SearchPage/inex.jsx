@@ -86,7 +86,7 @@ export const SearchPage = ({ menu, setMenu }) => {
               onChange={(event) => setCity(event.target.value)}
             >
               <option className="opt" value="">
-                Selecione uma cidade
+                Qualquer
               </option>
               {cityList.map((city, index) => {
                 return (
@@ -107,7 +107,7 @@ export const SearchPage = ({ menu, setMenu }) => {
               value={speciality}
               onChange={(event) => setSpeciality(event.target.value)}
             >
-              <option value="">Selecione uma especialidade</option>
+              <option value="">Todas</option>
               {specialityList.map((speciality, index) => {
                 return (
                   <option key={index} value={speciality.name}>
@@ -127,7 +127,7 @@ export const SearchPage = ({ menu, setMenu }) => {
               value={gender}
               onChange={(event) => setGender(event.target.value)}
             >
-              <option value="">Selecione o gênero</option>
+              <option value="">Indiferente</option>
               <option value="Female">Feminino</option>
               <option value="Male">Masculino</option>
             </select>
