@@ -12,6 +12,8 @@ export const Header = ({ menu, setMenu }) => {
 
   return (
     <header className="headerContainer">
+      <Link className="headerNav">CONHEÇA A EQUIPA</Link>
+
       <Link to="/">
         <img className="headerLogo" src={lobo} alt="logo" />
       </Link>
@@ -28,6 +30,8 @@ export const Header = ({ menu, setMenu }) => {
           />
         )}
       </div>
+
+      <Link className="headerNav">ENCONTRE O PT IDEAL</Link>
     </header>
   );
 };

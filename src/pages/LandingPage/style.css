@@ -181,8 +181,10 @@
 }
 
 @media(width >= 768px){
-  
-
+    .landingPageContainer{
+        min-height: 0;
+    
+        }
     .bottomSection{
         display: flex;
         flex-direction: row;

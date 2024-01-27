@@ -32,9 +32,6 @@ export const NavBar = ({ menu, setMenu }) => {
       <Link to="/busca" className="navLink">
         ENCONTRE O PT IDEAL
       </Link>
-      <Link to="/sobre" className="navLink">
-        SOBRE NÓS
-      </Link>
     </nav>
   );
 };
