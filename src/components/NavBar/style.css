@@ -12,7 +12,7 @@
 
     right: 0;
     left: 0;
-    top: 37px;
+    top: 29px;
 
     z-index: 1;
 
@@ -20,13 +20,13 @@
 
     height: 78px;
 
-    height: 10px;
+    height: 20px;
 }
 .navLink{
     text-decoration: none;
     color: var(--primary-grey);
 
-    font-size: 12px;
+    font-size: 16px;
     text-align: center;
 }
 .moveNav{
