@@ -24,6 +24,8 @@
 .icon{
     width: auto;
     height: 18px;
+
+    cursor: pointer;
 }
 
 @media(width >= 1024px){

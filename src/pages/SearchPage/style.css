@@ -1,11 +1,12 @@
 .searchPageContainer{
     min-height: 100vh;
 
-    transition: 0.1s ease-in;
+    transition: 0.1s ease-in;  
 }
 .searchMain{
     display: flex;
     padding: 20px;
+
 }
 .searchForm{
     display: flex;
@@ -19,6 +20,8 @@
     gap: 20px;
 
     padding: 20px;
+
+    background-image: url('../../assets/images/searchBackground.png');
 }
 .searchTitle{
     font-size: 38px;
@@ -82,8 +85,12 @@ select{
     outline: none;
 
     color: var(--primary-color);
-}
 
+    cursor: pointer;
+}
+option{
+    cursor: pointer;
+}
 .formBtn{
     width: 150px;
 
@@ -111,7 +118,35 @@ select{
     }
 }
 @media(width >= 768px) {
+    .searchPageContainer{
+        min-height: 0;
+
+    }
     .searchTitle{
         text-align: center;
+    }
+    .searchMain{
+        min-height: 400px;
+    }
+}
+
+@media(width>= 1440px){
+    .searchForm{
+        padding: 50px;
+    }
+    .ptContainer{
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        padding: 50px 0px;
+    }
+    .label > span{
+        font-size: 20px;
+    }
+    select{
+        width: 300px;
+        padding: 10px;
+
+        font-size: 16px;
     }
 }

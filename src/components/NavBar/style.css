@@ -41,3 +41,11 @@
         transition: 0.3s ease-out;
     }
 }
+
+@media(width >= 1440px){
+    .moveNav{
+        top: 83px;
+    
+        transition: 0.3s ease-out;
+    }
+}

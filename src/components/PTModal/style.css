@@ -13,6 +13,9 @@
     justify-content: center;
 
     z-index: 3;
+
+    
+    transition: 0.2s ease-in-out;
   }
 .ptModal{
     width: 85%;
@@ -26,6 +29,9 @@
 
     z-index: 3;
 
+    max-width: 350px;
+
+    transition: 0.2s ease-in-out;
 }
 .ptModalImg{
     height: 200px;
@@ -45,6 +51,8 @@
 
     right: 10px;
     top: 10px;
+
+    cursor: pointer;
 }
 .ptModalInfos{
     padding: 20px;

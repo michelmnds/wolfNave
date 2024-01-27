@@ -59,3 +59,12 @@
         padding: 20px 130px
     }
 }
+@media(width >= 1440px){
+    .teamPageContainer{
+        padding: 50px 150px;
+        gap: 50px
+    }
+    .teamPageMain{
+        gap: 50px 100px;
+    }
+}

@@ -82,7 +82,9 @@ export const SearchPage = ({ menu, setMenu }) => {
               value={city}
               onChange={(event) => setCity(event.target.value)}
             >
-              <option value="">Selecione uma cidade</option>
+              <option className="opt" value="">
+                Selecione uma cidade
+              </option>
               {cityList.map((city, index) => {
                 return (
                   <option key={index} value={city.name}>
