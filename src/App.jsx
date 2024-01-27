@@ -8,6 +8,7 @@ import { ModalContext } from "./providers/ModalContext";
 import { Footer } from "./components/Footer";
 import { SearchPage } from "./pages/SearchPage/inex";
 import { NavBar } from "./components/NavBar";
+import { TeamPage } from "./pages/TeamPage";
 
 function App() {
   const [menu, setMenu] = useState();
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage menu={menu} />} />
         <Route path="/busca" element={<SearchPage menu={menu} />} />
-        {/* <Route path="/equipa" element={<TeamPage menu={menu}/>} /> */}
+        <Route path="/equipa" element={<TeamPage menu={menu} />} />
       </Routes>
       <Footer />
     </>
