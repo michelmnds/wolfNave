@@ -3,11 +3,14 @@ import "./style.css";
 import x from "../../assets/icons/x.png";
 import menuIcon from "../../assets/icons/menu.png";
 import lobo from "../../assets/images/lobo.png";
+import { Link } from "react-router-dom";
 
 export const Header = ({ menu }) => {
   return (
     <header className="headerContainer">
-      <img className="headerLogo" src={lobo} alt="logo" />
+      <Link to="/">
+        <img className="headerLogo" src={lobo} alt="logo" />
+      </Link>
 
       <div className="iconContainer">
         {menu ? (
