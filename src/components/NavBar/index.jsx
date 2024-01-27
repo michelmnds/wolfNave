@@ -27,10 +27,10 @@ export const NavBar = ({ menu, setMenu }) => {
   return (
     <nav className={`navBarContainer ${menu ? "moveNav" : ""}`}>
       <Link to="/equipa" className="navLink">
-        CONHEÇA A EQUIPA
+        EQUIPA
       </Link>
       <Link to="/busca" className="navLink">
-        ENCONTRE O PT IDEAL
+        BUSCA
       </Link>
     </nav>
   );

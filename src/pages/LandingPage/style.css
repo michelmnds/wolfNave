@@ -174,8 +174,8 @@
     top: 175px;
     left: 10px;
 }
-.move{
-    transform: translateY(98px);
+.moveLanding{
+    transform: translateY(31px);
 
     transition: 0.3s ease-out;
 }

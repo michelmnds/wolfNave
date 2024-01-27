@@ -48,13 +48,13 @@ export const LandingPage = ({ menu, setMenu }) => {
     return (
       <div className="landingPageContainer" id="landingPageContainer">
         <section className="topSection">
-          <div className={`landingImage ${menu ? "move" : ""}`}>
+          <div className={`landingImage ${menu ? "moveLanding" : ""}`}>
             <img className="landingLogo" src={logo} alt="logo" />
           </div>
         </section>
 
         <section className="bottomSection">
-          <main className={`landingMain ${menu ? "move" : ""}`}>
+          <main className={`landingMain ${menu ? "moveLanding" : ""}`}>
             <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
 
             <Link to="/busca" className="mainBtn">
@@ -66,7 +66,7 @@ export const LandingPage = ({ menu, setMenu }) => {
             </Link>
           </main>
 
-          <div className={`ptDisplayContainer ${menu ? "move" : ""}`}>
+          <div className={`ptDisplayContainer ${menu ? "moveLanding" : ""}`}>
             <div
               key={ptList[currentIndex]}
               className="ptDisplay"

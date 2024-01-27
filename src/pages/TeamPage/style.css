@@ -38,7 +38,7 @@
     color: var(--primary-color);
 }
 .move{
-    transform: translateY(98px);
+    transform: translateY(31px);
 
     transition: 0.3s ease-out;
 }

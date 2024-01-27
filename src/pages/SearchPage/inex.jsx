@@ -73,7 +73,7 @@ export const SearchPage = ({ menu, setMenu }) => {
 
   if (!isLoading) {
     return (
-      <div className={`searchPageContainer ${menu ? "move" : ""}`}>
+      <div className={`searchPageContainer ${menu ? "moveSearch" : ""}`}>
         <form className="searchForm" onSubmit={handleSubmit}>
           <h1 className="searchTitle">Vamos encontar o PT ideal para si</h1>
 

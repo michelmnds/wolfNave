@@ -107,8 +107,8 @@ option{
     
     cursor: pointer;
 }
-.move{
-    transform: translateY(98px);
+.moveSearch{
+    transform: translateY(31px);
 
     transition: 0.3s ease-out;
 }

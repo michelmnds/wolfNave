@@ -2,19 +2,17 @@
     display: flex;
 
     align-items: center;
-    justify-content: center;
-
-    gap: 60px;
+    justify-content: space-evenly;
 
     padding: 10px;
 
-    background-color: var(--primary-grey);
+    background-color: var(--primary-color);
 
     position: absolute;
 
     right: 0;
     left: 0;
-    top: -30px;
+    top: 37px;
 
     z-index: 1;
 
@@ -22,13 +20,14 @@
 
     height: 78px;
 
-    border-bottom: 2px solid var(--primary-color);
+    height: 10px;
 }
 .navLink{
     text-decoration: none;
-    font-weight: bolder;
+    color: var(--primary-grey);
 
-    color: var(--primary-color);
+    font-size: 12px;
+    text-align: center;
 }
 .moveNav{
     top: 69px;
