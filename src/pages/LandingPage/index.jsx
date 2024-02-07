@@ -34,16 +34,6 @@ export const LandingPage = ({ menu, setMenu }) => {
     }
   }, [currentIndex]);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % ptList.length);
-    }, 3000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [ptList]);
-
   if (!isLoading) {
     return (
       <div className="landingPageContainer" id="landingPageContainer">
@@ -66,42 +56,46 @@ export const LandingPage = ({ menu, setMenu }) => {
             </Link>
           </main>
 
-          <div className={`ptDisplayContainer ${menu ? "moveLanding" : ""}`}>
-            <div
-              key={ptList[currentIndex]}
-              className="ptDisplay"
-              style={{ backgroundImage: `url(${ptList[currentIndex]?.image})` }}
-            >
-              <section className="paginationContainer">
-                <span
-                  className="lt"
-                  onClick={() => setCurrentIndex(currentIndex - 1)}
-                >
-                  &lt;
-                </span>
-                <span
-                  className="gt"
-                  onClick={() => setCurrentIndex(currentIndex + 1)}
-                >
-                  &gt;
-                </span>
+          {!isLoading && (
+            <div className={`ptDisplayContainer ${menu ? "moveLanding" : ""}`}>
+              <div
+                key={ptList[currentIndex]}
+                className="ptDisplay"
+                style={{
+                  backgroundImage: `url(${ptList[currentIndex]?.image})`,
+                }}
+              >
+                <section className="paginationContainer">
+                  <span
+                    className="lt"
+                    onClick={() => setCurrentIndex(currentIndex - 1)}
+                  >
+                    &lt;
+                  </span>
+                  <span
+                    className="gt"
+                    onClick={() => setCurrentIndex(currentIndex + 1)}
+                  >
+                    &gt;
+                  </span>
 
-                {ptList.map((pt, index) => {
-                  return (
-                    <span
-                      className={`pagination ${
-                        currentIndex === index ? "gold" : ""
-                      }`}
-                      key={index + "a"}
-                      onClick={() => handlePaginationClick(index)}
-                    >
-                      -
-                    </span>
-                  );
-                })}
-              </section>
+                  {ptList.map((pt, index) => {
+                    return (
+                      <span
+                        className={`pagination ${
+                          currentIndex === index ? "gold" : ""
+                        }`}
+                        key={index + "a"}
+                        onClick={() => handlePaginationClick(index)}
+                      >
+                        -
+                      </span>
+                    );
+                  })}
+                </section>
+              </div>
             </div>
-          </div>
+          )}
         </section>
       </div>
     );

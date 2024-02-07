@@ -6,7 +6,7 @@ import { LandingPage } from "./pages/LandingPage";
 import { PTModal } from "./components/PTModal";
 import { ModalContext } from "./providers/ModalContext";
 import { Footer } from "./components/Footer";
-import { SearchPage } from "./pages/SearchPage/inex";
+import { SearchPage } from "./pages/SearchPage/index";
 import { NavBar } from "./components/NavBar";
 import { TeamPage } from "./pages/TeamPage";
 
