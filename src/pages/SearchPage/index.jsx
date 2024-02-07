@@ -75,7 +75,7 @@ export const SearchPage = ({ menu, setMenu }) => {
     return (
       <div className={`searchPageContainer ${menu ? "moveSearch" : ""}`}>
         <form className="searchForm" onSubmit={handleSubmit}>
-          <h1 className="searchTitle">Vamos encontar o PT ideal para si</h1>
+          <h1 className="searchTitle">Vamos encontar o PT ideal para ti</h1>
 
           <label className="label" htmlFor="cidade">
             <span>Cidade</span>
@@ -133,7 +133,7 @@ export const SearchPage = ({ menu, setMenu }) => {
             </select>
           </label>
 
-          <button className="formBtn">BUSCAR</button>
+          <button className="formBtn">PESQUISAR</button>
         </form>
 
         <main className="searchMain">

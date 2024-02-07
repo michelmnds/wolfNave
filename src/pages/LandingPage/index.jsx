@@ -45,7 +45,7 @@ export const LandingPage = ({ menu, setMenu }) => {
 
         <section className="bottomSection">
           <main className={`landingMain ${menu ? "moveLanding" : ""}`}>
-            <h2 className="mainTitle">Econtra o PT mais próximo de si</h2>
+            <h2 className="mainTitle">Econtra o PT mais próximo de ti</h2>
 
             <Link to="/busca" className="mainBtn">
               PESQUISAR
